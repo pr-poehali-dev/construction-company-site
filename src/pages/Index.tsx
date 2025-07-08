@@ -17,9 +17,11 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      <header className="bg-white py-4 px-6 border-b border-gray-200">
+      <header className="bg-white py-4 px-4 md:px-6 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="text-2xl font-bold text-black">DOMGAZOBETON</div>
+          <div className="text-lg md:text-2xl font-bold text-black">
+            DOMGAZOBETON
+          </div>
 
           <nav className="hidden md:flex space-x-8">
             <div className="relative group">
@@ -51,21 +53,61 @@ const Index = () => {
             </a>
           </nav>
 
-          <div className="flex items-center space-x-4">
+          {/* Mobile menu button */}
+          <button className="md:hidden p-2" id="mobile-menu-btn">
+            <Icon name="Menu" size={24} />
+          </button>
+
+          <div className="hidden md:flex items-center space-x-4">
             <button className="bg-gray-200 px-4 py-2 rounded text-gray-700 hover:bg-gray-300">
               Заказать звонок
             </button>
             <span className="text-gray-700 font-medium">8 800 550-28-34</span>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        <div
+          className="md:hidden mt-4 border-t border-gray-200 pt-4 hidden"
+          id="mobile-menu"
+        >
+          <div className="flex flex-col space-y-4">
+            <a href="#" className="text-gray-700 hover:text-black">
+              Проекты
+            </a>
+            <a href="#" className="text-gray-700 hover:text-black">
+              Услуги
+            </a>
+            <a href="#" className="text-gray-700 hover:text-black">
+              Построено
+            </a>
+            <a href="#" className="text-gray-700 hover:text-black">
+              Ипотека
+            </a>
+            <a href="#" className="text-gray-700 hover:text-black">
+              Компания
+            </a>
+            <a href="#" className="text-gray-700 hover:text-black">
+              Контакты
+            </a>
+            <div className="pt-4 border-t border-gray-200">
+              <button className="w-full bg-gray-200 px-4 py-2 rounded text-gray-700 hover:bg-gray-300 mb-2">
+                Заказать звонок
+              </button>
+              <div className="text-center text-gray-700 font-medium">
+                8 800 550-28-34
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-white py-20 px-6">
+      <section className="bg-white py-12 md:py-20 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="space-y-16">
+          <div className="space-y-8 md:space-y-16">
             {/* Main heading */}
-            <h1 className="text-6xl leading-[1.1] text-black font-semibold animate-fade-in opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards]">
+            <h1 className="text-3xl md:text-6xl leading-[1.1] text-black font-semibold animate-fade-in opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards]">
               Проектируем и строим
               <br />
               <span className="text-gray-400 font-normal">
@@ -79,14 +121,14 @@ const Index = () => {
                 <img
                   src="/img/0c89c709-4436-47dc-8e3d-cf3f98127512.jpg"
                   alt="Современный дом"
-                  className="w-full h-96 object-cover rounded-lg"
+                  className="w-full h-64 md:h-96 object-cover rounded-lg"
                 />
               </div>
 
               {/* Text positioned to the right of the image */}
-              <div className="flex flex-col justify-between h-96 animate-slide-in-right opacity-0 [animation-delay:1s] [animation-fill-mode:forwards]">
+              <div className="flex flex-col justify-between h-auto md:h-96 space-y-6 md:space-y-0 animate-slide-in-right opacity-0 [animation-delay:1s] [animation-fill-mode:forwards]">
                 <div className="text-left">
-                  <p className="text-xl text-gray-400 leading-relaxed font-light">
+                  <p className="text-lg md:text-xl text-gray-400 leading-relaxed font-light">
                     в Санкт-Петербурге
                     <br />и Москве
                   </p>
@@ -109,9 +151,9 @@ const Index = () => {
 
       {/* Projects Grid Section */}
       <section className="relative">
-        <div className="grid grid-cols-3 grid-rows-2 h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-6 md:grid-rows-2 h-auto md:h-screen">
           {/* Top Left - Minimalist */}
-          <div className="relative group overflow-hidden cursor-pointer">
+          <div className="relative group overflow-hidden cursor-pointer h-64 md:h-full">
             <img
               src="/img/459b4baa-32bd-4044-85ef-02513dfda7a0.jpg"
               alt="Современный минималистичный дом"
@@ -119,14 +161,14 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 МИНИМАЛИЗМ
               </h3>
             </div>
           </div>
 
           {/* Top Center - Scandinavian */}
-          <div className="relative group overflow-hidden cursor-pointer">
+          <div className="relative group overflow-hidden cursor-pointer h-64 md:h-full">
             <img
               src="/img/219c1c61-09f5-4e26-a291-089c9267f0ce.jpg"
               alt="Скандинавский стиль дома"
@@ -134,14 +176,14 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 СКАНДИНАВСКИЙ
               </h3>
             </div>
           </div>
 
           {/* Top Right - Eco-friendly */}
-          <div className="relative group overflow-hidden cursor-pointer">
+          <div className="relative group overflow-hidden cursor-pointer h-64 md:h-full">
             <img
               src="/img/2e633326-1320-489e-a42b-aaf4ab0ade0c.jpg"
               alt="Эко-дом с солнечными панелями"
@@ -149,14 +191,14 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 ЭКО-ДОМ
               </h3>
             </div>
           </div>
 
           {/* Bottom Left - Smart Home */}
-          <div className="relative group overflow-hidden cursor-pointer">
+          <div className="relative group overflow-hidden cursor-pointer h-64 md:h-full">
             <img
               src="/img/9c9fd4cb-b59b-4f7a-a8ef-41825c70a409.jpg"
               alt="Умный дом с высокими технологиями"
@@ -164,14 +206,14 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 УМНЫЙ ДОM
               </h3>
             </div>
           </div>
 
           {/* Bottom Center - Brutalist */}
-          <div className="relative group overflow-hidden cursor-pointer">
+          <div className="relative group overflow-hidden cursor-pointer h-64 md:h-full">
             <img
               src="/img/d17690dd-ff66-4895-97b8-5cdf276b8672.jpg"
               alt="Брутализм архитектура"
@@ -179,14 +221,14 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 БРУТАЛИЗМ
               </h3>
             </div>
           </div>
 
           {/* Bottom Right - Stalinist */}
-          <div className="relative group overflow-hidden cursor-pointer">
+          <div className="relative group overflow-hidden cursor-pointer h-64 md:h-full">
             <img
               src="/img/5e3a6340-ea32-4d0c-9321-67cb588c2e61.jpg"
               alt="Сталинский ампир архитектура"
@@ -194,7 +236,7 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 СТАЛИНСКИЙ
               </h3>
             </div>
