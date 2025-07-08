@@ -82,25 +82,24 @@ const Index = () => {
               </div>
 
               {/* Text positioned to the right of the image */}
-              <div className="flex flex-col justify-center h-96">
+              <div className="flex flex-col justify-between h-96">
                 <div className="text-right">
                   <p className="text-xl text-gray-400 leading-relaxed">
                     в Санкт-Петербурге
                     <br />и Москве
                   </p>
                 </div>
-              </div>
-            </div>
 
-            {/* Bottom text section */}
-            <div className="max-w-md">
-              <p className="text-gray-600 leading-relaxed">
-                Строим дома «под ключ»:
-                <br />
-                от проектирования
-                <br />
-                до сдачи готового объекта помещений
-              </p>
+                <div className="text-left">
+                  <p className="text-gray-600 leading-relaxed">
+                    Строим дома «под ключ»:
+                    <br />
+                    от проектирования
+                    <br />
+                    до сдачи готового объекта помещений
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
