@@ -62,29 +62,33 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="bg-white py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-16">
             {/* Main heading */}
-            <h1 className="text-6xl leading-[1.1] text-black font-light max-w-2xl">
+            <h1 className="text-6xl leading-[1.1] text-black font-light">
               Проектируем и строим
               <br />
               <span className="text-gray-400">современные дома</span>
             </h1>
 
-            {/* Center image with text overlay */}
-            <div className="relative max-w-2xl">
-              <img
-                src="/img/0c89c709-4436-47dc-8e3d-cf3f98127512.jpg"
-                alt="Современный дом"
-                className="w-full h-96 object-cover rounded-lg"
-              />
+            {/* Image and text section */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              <div className="lg:col-span-2">
+                <img
+                  src="/img/0c89c709-4436-47dc-8e3d-cf3f98127512.jpg"
+                  alt="Современный дом"
+                  className="w-full h-96 object-cover rounded-lg"
+                />
+              </div>
 
-              {/* Text overlay in bottom right of image */}
-              <div className="absolute bottom-8 right-8 text-right">
-                <p className="text-xl text-gray-400 leading-relaxed">
-                  в Санкт-Петербурге
-                  <br />и Москве
-                </p>
+              {/* Text positioned to the right of the image */}
+              <div className="flex flex-col justify-center h-96">
+                <div className="text-right">
+                  <p className="text-xl text-gray-400 leading-relaxed">
+                    в Санкт-Петербурге
+                    <br />и Москве
+                  </p>
+                </div>
               </div>
             </div>
 
