@@ -62,24 +62,24 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="bg-white py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div className="space-y-12">
-              <h1 className="text-6xl leading-[1.1] text-black font-light">
-                Проектируем и строим
-                <br />
-                <span className="text-gray-400">современные дома</span>
-              </h1>
-            </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-12">
+            {/* Main heading */}
+            <h1 className="text-6xl leading-[1.1] text-black font-light max-w-2xl">
+              Проектируем и строим
+              <br />
+              <span className="text-gray-400">современные дома</span>
+            </h1>
 
-            <div className="relative">
+            {/* Center image with text overlay */}
+            <div className="relative max-w-2xl">
               <img
                 src="/img/0c89c709-4436-47dc-8e3d-cf3f98127512.jpg"
                 alt="Современный дом"
                 className="w-full h-96 object-cover rounded-lg"
               />
 
-              {/* Text overlays positioned like on the screenshot */}
+              {/* Text overlay in bottom right of image */}
               <div className="absolute bottom-8 right-8 text-right">
                 <p className="text-xl text-gray-400 leading-relaxed">
                   в Санкт-Петербурге
@@ -87,17 +87,17 @@ const Index = () => {
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* Bottom text section */}
-          <div className="mt-16 max-w-md">
-            <p className="text-gray-600 leading-relaxed">
-              Строим дома «под ключ»:
-              <br />
-              от проектирования
-              <br />
-              до сдачи готового объекта помещений
-            </p>
+            {/* Bottom text section */}
+            <div className="max-w-md">
+              <p className="text-gray-600 leading-relaxed">
+                Строим дома «под ключ»:
+                <br />
+                от проектирования
+                <br />
+                до сдачи готового объекта помещений
+              </p>
+            </div>
           </div>
         </div>
       </section>
