@@ -65,7 +65,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h1 className="text-6xl font-light leading-tight text-black">
+              <h1 className="text-6xl leading-tight text-black font-normal lh-1">
                 Проектируем и строим
                 <br />
                 <span className="text-gray-400">современные дома</span>
