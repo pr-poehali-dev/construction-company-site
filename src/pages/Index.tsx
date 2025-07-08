@@ -23,30 +23,30 @@ const Index = () => {
 
           <nav className="hidden md:flex space-x-8">
             <div className="relative group">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-black">
+              <button className="flex items-center space-x-1 text-sm text-gray-700 hover:text-black">
                 <span>Проекты</span>
                 <Icon name="ChevronDown" size={16} />
               </button>
             </div>
             <div className="relative group">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-black">
+              <button className="flex items-center space-x-1 text-sm text-gray-700 hover:text-black">
                 <span>Услуги</span>
                 <Icon name="ChevronDown" size={16} />
               </button>
             </div>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <a href="#" className="text-sm text-gray-700 hover:text-black">
               Построено
             </a>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <a href="#" className="text-sm text-gray-700 hover:text-black">
               Ипотека
             </a>
             <div className="relative group">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-black">
+              <button className="flex items-center space-x-1 text-sm text-gray-700 hover:text-black">
                 <span>Компания</span>
                 <Icon name="ChevronDown" size={16} />
               </button>
             </div>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <a href="#" className="text-sm text-gray-700 hover:text-black">
               Контакты
             </a>
           </nav>
