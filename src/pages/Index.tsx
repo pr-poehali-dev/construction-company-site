@@ -109,7 +109,7 @@ const Index = () => {
 
       {/* Projects Grid Section */}
       <section className="relative">
-        <div className="grid grid-cols-2 grid-rows-2 h-screen">
+        <div className="grid grid-cols-3 grid-rows-2 h-screen">
           {/* Top Left - Minimalist */}
           <div className="relative group overflow-hidden cursor-pointer">
             <img
@@ -119,13 +119,13 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 МИНИМАЛИЗМ
               </h3>
             </div>
           </div>
 
-          {/* Top Right - Scandinavian */}
+          {/* Top Center - Scandinavian */}
           <div className="relative group overflow-hidden cursor-pointer">
             <img
               src="/img/219c1c61-09f5-4e26-a291-089c9267f0ce.jpg"
@@ -134,13 +134,13 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 СКАНДИНАВСКИЙ
               </h3>
             </div>
           </div>
 
-          {/* Bottom Left - Eco-friendly */}
+          {/* Top Right - Eco-friendly */}
           <div className="relative group overflow-hidden cursor-pointer">
             <img
               src="/img/2e633326-1320-489e-a42b-aaf4ab0ade0c.jpg"
@@ -149,13 +149,13 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 ЭКО-ДОМ
               </h3>
             </div>
           </div>
 
-          {/* Bottom Right - Smart Home */}
+          {/* Bottom Left - Smart Home */}
           <div className="relative group overflow-hidden cursor-pointer">
             <img
               src="/img/9c9fd4cb-b59b-4f7a-a8ef-41825c70a409.jpg"
@@ -164,8 +164,38 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl tracking-wider">
+              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
                 УМНЫЙ ДОM
+              </h3>
+            </div>
+          </div>
+
+          {/* Bottom Center - Brutalist */}
+          <div className="relative group overflow-hidden cursor-pointer">
+            <img
+              src="/img/d17690dd-ff66-4895-97b8-5cdf276b8672.jpg"
+              alt="Брутализм архитектура"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
+                БРУТАЛИЗМ
+              </h3>
+            </div>
+          </div>
+
+          {/* Bottom Right - Stalinist */}
+          <div className="relative group overflow-hidden cursor-pointer">
+            <img
+              src="/img/5e3a6340-ea32-4d0c-9321-67cb588c2e61.jpg"
+              alt="Сталинский ампир архитектура"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-wider">
+                СТАЛИНСКИЙ
               </h3>
             </div>
           </div>
