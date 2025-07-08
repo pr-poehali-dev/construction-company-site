@@ -107,6 +107,58 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Projects Grid Section */}
+      <section className="relative">
+        <div className="grid grid-cols-2 grid-rows-2 h-screen">
+          {/* Top Left */}
+          <div className="relative group overflow-hidden">
+            <img
+              src="/img/d1fb5899-1305-42d3-be6c-197bea7f0011.jpg"
+              alt="Проект 1"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
+          </div>
+
+          {/* Top Right */}
+          <div className="relative group overflow-hidden">
+            <img
+              src="/img/8be62b45-c2d3-45af-b509-43f76bd4e08b.jpg"
+              alt="Проект 2"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
+          </div>
+
+          {/* Bottom Left */}
+          <div className="relative group overflow-hidden">
+            <img
+              src="/img/385dc920-1c4d-44c8-a1c7-246fa586e5c0.jpg"
+              alt="Проект 3"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
+          </div>
+
+          {/* Bottom Right */}
+          <div className="relative group overflow-hidden">
+            <img
+              src="/img/9b30b13c-d2d4-490d-b93f-5f7506ece7e4.jpg"
+              alt="Проект 4"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
+          </div>
+
+          {/* Central Text Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <h2 className="text-6xl md:text-8xl font-bold text-white drop-shadow-2xl tracking-wider">
+              МОНОЛИТ
+            </h2>
+          </div>
+        </div>
+      </section>
+
       {/* Fixed Contact Button */}
       <div className="fixed bottom-8 right-8 z-50">
         <div className="relative">
