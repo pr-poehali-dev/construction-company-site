@@ -63,30 +63,13 @@ const Index = () => {
       {/* Hero Section */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h1 className="text-6xl leading-tight text-black font-normal !lh-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="space-y-12">
+              <h1 className="text-6xl leading-[1.1] text-black font-light">
                 Проектируем и строим
                 <br />
                 <span className="text-gray-400">современные дома</span>
               </h1>
-
-              <div className="text-right">
-                <p className="text-xl text-gray-400 leading-relaxed">
-                  в Санкт-Петербурге
-                  <br />и Москве
-                </p>
-              </div>
-
-              <div className="text-left">
-                <p className="text-gray-600 leading-relaxed">
-                  Строим дома «под ключ»:
-                  <br />
-                  от проектирования
-                  <br />
-                  до сдачи готового объекта помещений
-                </p>
-              </div>
             </div>
 
             <div className="relative">
@@ -95,7 +78,26 @@ const Index = () => {
                 alt="Современный дом"
                 className="w-full h-96 object-cover rounded-lg"
               />
+
+              {/* Text overlays positioned like on the screenshot */}
+              <div className="absolute bottom-8 right-8 text-right">
+                <p className="text-xl text-gray-400 leading-relaxed">
+                  в Санкт-Петербурге
+                  <br />и Москве
+                </p>
+              </div>
             </div>
+          </div>
+
+          {/* Bottom text section */}
+          <div className="mt-16 max-w-md">
+            <p className="text-gray-600 leading-relaxed">
+              Строим дома «под ключ»:
+              <br />
+              от проектирования
+              <br />
+              до сдачи готового объекта помещений
+            </p>
           </div>
         </div>
       </section>
