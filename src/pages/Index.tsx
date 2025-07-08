@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
+import { useState } from "react";
 
 const Index = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Top Banner */}
@@ -54,8 +56,11 @@ const Index = () => {
           </nav>
 
           {/* Mobile menu button */}
-          <button className="md:hidden p-2" id="mobile-menu-btn">
-            <Icon name="Menu" size={24} />
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <Icon name={isMobileMenuOpen ? "X" : "Menu"} size={24} />
           </button>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -68,8 +73,7 @@ const Index = () => {
 
         {/* Mobile menu */}
         <div
-          className="md:hidden mt-4 border-t border-gray-200 pt-4 hidden"
-          id="mobile-menu"
+          className={`md:hidden mt-4 border-t border-gray-200 pt-4 ${isMobileMenuOpen ? "block" : "hidden"}`}
         >
           <div className="flex flex-col space-y-4">
             <a href="#" className="text-gray-700 hover:text-black">
