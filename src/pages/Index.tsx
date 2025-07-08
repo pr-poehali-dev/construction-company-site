@@ -110,62 +110,62 @@ const Index = () => {
       {/* Projects Grid Section */}
       <section className="relative">
         <div className="grid grid-cols-2 grid-rows-2 h-screen">
-          {/* Top Left */}
+          {/* Top Left - Minimalist */}
           <div className="relative group overflow-hidden cursor-pointer">
             <img
-              src="/img/d1fb5899-1305-42d3-be6c-197bea7f0011.jpg"
-              alt="Проект 1"
+              src="/img/459b4baa-32bd-4044-85ef-02513dfda7a0.jpg"
+              alt="Современный минималистичный дом"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl tracking-wider">
-                МОНОЛИТ
+                МИНИМАЛИЗМ
               </h3>
             </div>
           </div>
 
-          {/* Top Right */}
+          {/* Top Right - Scandinavian */}
           <div className="relative group overflow-hidden cursor-pointer">
             <img
-              src="/img/8be62b45-c2d3-45af-b509-43f76bd4e08b.jpg"
-              alt="Проект 2"
+              src="/img/219c1c61-09f5-4e26-a291-089c9267f0ce.jpg"
+              alt="Скандинавский стиль дома"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl tracking-wider">
-                МОНОЛИТ
+                СКАНДИНАВСКИЙ
               </h3>
             </div>
           </div>
 
-          {/* Bottom Left */}
+          {/* Bottom Left - Eco-friendly */}
           <div className="relative group overflow-hidden cursor-pointer">
             <img
-              src="/img/385dc920-1c4d-44c8-a1c7-246fa586e5c0.jpg"
-              alt="Проект 3"
+              src="/img/2e633326-1320-489e-a42b-aaf4ab0ade0c.jpg"
+              alt="Эко-дом с солнечными панелями"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl tracking-wider">
-                МОНОЛИТ
+                ЭКО-ДОМ
               </h3>
             </div>
           </div>
 
-          {/* Bottom Right */}
+          {/* Bottom Right - Smart Home */}
           <div className="relative group overflow-hidden cursor-pointer">
             <img
-              src="/img/9b30b13c-d2d4-490d-b93f-5f7506ece7e4.jpg"
-              alt="Проект 4"
+              src="/img/9c9fd4cb-b59b-4f7a-a8ef-41825c70a409.jpg"
+              alt="Умный дом с высокими технологиями"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl tracking-wider">
-                МОНОЛИТ
+                УМНЫЙ ДОM
               </h3>
             </div>
           </div>
