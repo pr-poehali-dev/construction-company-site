@@ -65,15 +65,17 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="space-y-16">
             {/* Main heading */}
-            <h1 className="text-6xl leading-[1.1] text-black font-light">
+            <h1 className="text-6xl leading-[1.1] text-black font-semibold animate-fade-in opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards]">
               Проектируем и строим
               <br />
-              <span className="text-gray-400">современные дома</span>
+              <span className="text-gray-400 font-normal">
+                современные дома
+              </span>
             </h1>
 
             {/* Image and text section */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-2 animate-slide-in-left opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
                 <img
                   src="/img/0c89c709-4436-47dc-8e3d-cf3f98127512.jpg"
                   alt="Современный дом"
@@ -82,16 +84,16 @@ const Index = () => {
               </div>
 
               {/* Text positioned to the right of the image */}
-              <div className="flex flex-col justify-between h-96">
-                <div className="text-right">
-                  <p className="text-xl text-gray-400 leading-relaxed">
+              <div className="flex flex-col justify-between h-96 animate-slide-in-right opacity-0 [animation-delay:1s] [animation-fill-mode:forwards]">
+                <div className="text-left">
+                  <p className="text-xl text-gray-400 leading-relaxed font-light">
                     в Санкт-Петербурге
                     <br />и Москве
                   </p>
                 </div>
 
                 <div className="text-left">
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed font-light">
                     Строим дома «под ключ»:
                     <br />
                     от проектирования
