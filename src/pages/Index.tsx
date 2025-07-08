@@ -1,375 +1,269 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
-  const services = [
-    {
-      title: "Проектирование домов",
-      description:
-        "Индивидуальное архитектурное проектирование частных домов и коттеджей с учетом всех ваших пожеланий",
-      icon: "Home",
-    },
-    {
-      title: "Строительство коттеджей",
-      description:
-        "Полный цикл строительства от фундамента до сдачи под ключ с использованием современных материалов",
-      icon: "Building",
-    },
-    {
-      title: "Отделочные работы",
-      description:
-        "Внутренняя и внешняя отделка помещений, дизайн интерьеров и благоустройство территории",
-      icon: "Paintbrush",
-    },
-    {
-      title: "Реконструкция",
-      description:
-        "Модернизация и реконструкция существующих зданий с расширением функциональности",
-      icon: "Wrench",
-    },
-  ];
-
-  const advantages = [
-    {
-      title: "15 лет опыта",
-      description: "Успешно завершили более 200 проектов жилого строительства",
-      icon: "Award",
-    },
-    {
-      title: "Собственное производство",
-      description: "Контролируем качество материалов и сроки выполнения работ",
-      icon: "Factory",
-    },
-    {
-      title: "Гарантия 5 лет",
-      description: "Предоставляем расширенную гарантию на все виды работ",
-      icon: "Shield",
-    },
-    {
-      title: "Фиксированная цена",
-      description: "Стоимость фиксируется в договоре без скрытых доплат",
-      icon: "Calculator",
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
+      {/* Top Banner */}
+      <div className="bg-gray-100 py-2 px-4 text-center">
+        <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
+          <Icon name="ArrowLeft" size={16} />
+          <span>
+            Подпишитесь на наш Телеграм-канал и будьте в курсе последних
+            новостей
+          </span>
+          <Icon name="ArrowRight" size={16} />
+        </div>
+      </div>
+
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Icon name="Building2" size={32} className="text-blue-600" />
-              <h1 className="text-2xl font-bold text-gray-800">СтройДом</h1>
+      <header className="bg-white py-4 px-6 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="text-2xl font-bold text-black">DOMGAZOBETON</div>
+
+          <nav className="hidden md:flex space-x-8">
+            <div className="relative group">
+              <button className="flex items-center space-x-1 text-gray-700 hover:text-black">
+                <span>Проекты</span>
+                <Icon name="ChevronDown" size={16} />
+              </button>
             </div>
-            <nav className="hidden md:flex space-x-8">
-              <a
-                href="#main"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                Главная
-              </a>
-              <a
-                href="#services"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                Услуги
-              </a>
-              <a
-                href="#about"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                О компании
-              </a>
-              <a
-                href="#contact"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                Контакты
-              </a>
-            </nav>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-600 font-medium">
-                +7 (800) 123-45-67
-              </span>
-              <Button>Заказать звонок</Button>
+            <div className="relative group">
+              <button className="flex items-center space-x-1 text-gray-700 hover:text-black">
+                <span>Услуги</span>
+                <Icon name="ChevronDown" size={16} />
+              </button>
             </div>
+            <a href="#" className="text-gray-700 hover:text-black">
+              Построено
+            </a>
+            <a href="#" className="text-gray-700 hover:text-black">
+              Ипотека
+            </a>
+            <div className="relative group">
+              <button className="flex items-center space-x-1 text-gray-700 hover:text-black">
+                <span>Компания</span>
+                <Icon name="ChevronDown" size={16} />
+              </button>
+            </div>
+            <a href="#" className="text-gray-700 hover:text-black">
+              Контакты
+            </a>
+          </nav>
+
+          <div className="flex items-center space-x-4">
+            <button className="bg-gray-200 px-4 py-2 rounded text-gray-700 hover:bg-gray-300">
+              Заказать звонок
+            </button>
+            <span className="text-gray-700 font-medium">8 800 550-28-34</span>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section
-        id="main"
-        className="py-20 bg-gradient-to-r from-blue-50 to-gray-50"
-      >
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-5xl font-bold text-gray-800 leading-tight">
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h1 className="text-6xl font-light leading-tight text-black">
                 Проектируем и строим
-                <span className="text-blue-600 block">современные дома</span>
+                <br />
+                <span className="text-gray-400">современные дома</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Строим дома "под ключ" от проектирования до сдачи готового
-                объекта помещений в Санкт-Петербурге и Москве
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  <Icon name="Phone" size={20} className="mr-2" />
-                  Записаться на экскурсию объекта
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
-                >
-                  Заказать звонок
-                </Button>
+
+              <div className="text-right">
+                <p className="text-xl text-gray-400 leading-relaxed">
+                  в Санкт-Петербурге
+                  <br />и Москве
+                </p>
+              </div>
+
+              <div className="text-left">
+                <p className="text-gray-600 leading-relaxed">
+                  Строим дома «под ключ»:
+                  <br />
+                  от проектирования
+                  <br />
+                  до сдачи готового объекта помещений
+                </p>
               </div>
             </div>
+
             <div className="relative">
               <img
-                src="/img/0c89c709-4436-47dc-8e3d-cf3f98127512.jpg"
+                src="https://cdn.poehali.dev/files/ca7efdbf-11d2-40f6-ba90-80e44c5f4d7d.jpg"
                 alt="Современный дом"
-                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+                className="w-full h-96 object-cover rounded-lg"
               />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Fixed Contact Button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <div className="relative">
+          <button className="bg-gray-800 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-gray-700 transition-colors">
+            <Icon name="MessageCircle" size={24} />
+          </button>
+          <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center">
+            3
+          </div>
+        </div>
+      </div>
+
+      {/* Secondary Contact Button */}
+      <div className="fixed bottom-8 right-28 z-50">
+        <button className="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors">
+          <div className="text-center">
+            <div className="text-xs text-gray-300">Записаться</div>
+            <div className="text-sm">на экскурсию объекта</div>
+          </div>
+        </button>
+      </div>
+
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="bg-gray-50 py-20 px-6">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Наши услуги
-            </h2>
+            <h2 className="text-4xl font-light text-black mb-4">Наши услуги</h2>
             <p className="text-xl text-gray-600">
-              Полный спектр услуг для строительства вашего дома
+              Полный цикл строительства частных домов
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow border-0 shadow-md"
-              >
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-4 p-4 bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center">
-                    <Icon
-                      name={service.icon}
-                      size={24}
-                      className="text-blue-600"
-                    />
-                  </div>
-                  <CardTitle className="text-xl text-gray-800">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <div className="mb-6">
+                <Icon name="Home" size={32} className="text-gray-600" />
+              </div>
+              <h3 className="text-xl font-medium text-black mb-4">
+                Проектирование
+              </h3>
+              <p className="text-gray-600">
+                Индивидуальное архитектурное проектирование с учетом ваших
+                потребностей
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <div className="mb-6">
+                <Icon name="Building" size={32} className="text-gray-600" />
+              </div>
+              <h3 className="text-xl font-medium text-black mb-4">
+                Строительство
+              </h3>
+              <p className="text-gray-600">
+                Полный цикл строительства от фундамента до сдачи под ключ
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <div className="mb-6">
+                <Icon name="Wrench" size={32} className="text-gray-600" />
+              </div>
+              <h3 className="text-xl font-medium text-black mb-4">Отделка</h3>
+              <p className="text-gray-600">
+                Внутренняя и внешняя отделка с применением качественных
+                материалов
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-light text-black mb-6">
+                О компании
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                Мы — команда профессионалов с более чем 15-летним опытом в
+                строительстве частных домов и коттеджей. Специализируемся на
+                создании современных, энергоэффективных и комфортных домов.
+              </p>
+
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <div className="text-2xl font-light text-black mb-2">
+                    200+
+                  </div>
+                  <div className="text-sm text-gray-600">Построенных домов</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-light text-black mb-2">15</div>
+                  <div className="text-sm text-gray-600">Лет опыта</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-light text-black mb-2">5</div>
+                  <div className="text-sm text-gray-600">Лет гарантии</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-light text-black mb-2">
+                    100%
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Довольных клиентов
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div>
               <img
                 src="/img/047025a7-1cfe-4149-8c85-5a0be9b9030d.jpg"
-                alt="Планы строительства"
-                className="rounded-lg shadow-xl w-full h-96 object-cover"
+                alt="Строительство дома"
+                className="w-full h-96 object-cover rounded-lg"
               />
             </div>
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-gray-800">
-                О компании СтройДом
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Мы специализируемся на строительстве жилых домов и коттеджей уже
-                более 15 лет. Наша команда профессиональных архитекторов,
-                инженеров и строителей создает качественные и надежные дома для
-                комфортной жизни.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {advantages.map((advantage, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="p-2 bg-blue-50 rounded-lg flex-shrink-0">
-                      <Icon
-                        name={advantage.icon}
-                        size={20}
-                        className="text-blue-600"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-800 mb-1">
-                        {advantage.title}
-                      </h3>
-                      <p className="text-sm text-gray-600">
-                        {advantage.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Свяжитесь с нами
-            </h2>
-            <p className="text-xl text-gray-600">
-              Готовы обсудить ваш проект? Оставьте заявку и мы свяжемся с вами
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-blue-50 rounded-lg">
-                  <Icon name="MapPin" size={24} className="text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Адрес</h3>
-                  <p className="text-gray-600">
-                    г. Санкт-Петербург, ул. Строителей, 15
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-blue-50 rounded-lg">
-                  <Icon name="Phone" size={24} className="text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Телефон</h3>
-                  <p className="text-gray-600">+7 (800) 123-45-67</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-blue-50 rounded-lg">
-                  <Icon name="Mail" size={24} className="text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Email</h3>
-                  <p className="text-gray-600">info@stroydom.ru</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-blue-50 rounded-lg">
-                  <Icon name="Clock" size={24} className="text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Время работы</h3>
-                  <p className="text-gray-600">
-                    Пн-Пт: 9:00-18:00, Сб: 10:00-16:00
-                  </p>
-                </div>
-              </div>
-            </div>
-            <Card className="p-6 shadow-lg">
-              <CardHeader className="p-0 mb-6">
-                <CardTitle className="text-2xl text-gray-800">
-                  Оставить заявку
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <form className="space-y-4">
-                  <div>
-                    <Input placeholder="Ваше имя" />
-                  </div>
-                  <div>
-                    <Input placeholder="Телефон" />
-                  </div>
-                  <div>
-                    <Input placeholder="Email" />
-                  </div>
-                  <div>
-                    <Textarea
-                      placeholder="Опишите ваш проект"
-                      className="min-h-[120px]"
-                    />
-                  </div>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                    Отправить заявку
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="container mx-auto px-6">
+      <footer className="bg-gray-800 text-white py-12 px-6">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Icon name="Building2" size={24} className="text-blue-400" />
-                <h3 className="text-xl font-bold">СтройДом</h3>
-              </div>
-              <p className="text-gray-400">
-                Строим дома вашей мечты с 2009 года
+              <div className="text-xl font-bold mb-4">DOMGAZOBETON</div>
+              <p className="text-gray-400 text-sm">
+                Строительство домов из газобетона в Санкт-Петербурге и Москве
               </p>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-4">Услуги</h4>
-              <ul className="space-y-2 text-gray-400">
+              <h4 className="font-medium mb-4">Услуги</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
                 <li>Проектирование</li>
                 <li>Строительство</li>
                 <li>Отделка</li>
-                <li>Реконструкция</li>
               </ul>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-4">Контакты</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>+7 (800) 123-45-67</li>
-                <li>info@stroydom.ru</li>
-                <li>г. Санкт-Петербург</li>
-                <li>ул. Строителей, 15</li>
+              <h4 className="font-medium mb-4">Контакты</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>8 800 550-28-34</li>
+                <li>info@domgazobeton.ru</li>
+                <li>Санкт-Петербург, Москва</li>
               </ul>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-4">Мы в соцсетях</h4>
-              <div className="flex space-x-4">
-                <Icon
-                  name="Facebook"
-                  size={20}
-                  className="text-gray-400 hover:text-blue-400 cursor-pointer"
-                />
-                <Icon
-                  name="Instagram"
-                  size={20}
-                  className="text-gray-400 hover:text-blue-400 cursor-pointer"
-                />
-                <Icon
-                  name="Youtube"
-                  size={20}
-                  className="text-gray-400 hover:text-blue-400 cursor-pointer"
-                />
-              </div>
+              <h4 className="font-medium mb-4">Документы</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>Лицензии</li>
+                <li>Сертификаты</li>
+                <li>Политика конфиденциальности</li>
+              </ul>
             </div>
           </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 СтройДом. Все права защищены.</p>
+
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+            <p>&copy; 2024 DOMGAZOBETON. Все права защищены.</p>
           </div>
         </div>
       </footer>
