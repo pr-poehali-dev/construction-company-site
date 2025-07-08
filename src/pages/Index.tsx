@@ -19,7 +19,7 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      <header className="bg-white py-4 px-4 md:px-6 border-b border-gray-200">
+      <header className="bg-white py-4 px-4 md:px-6 border-b border-gray-200 relative z-40">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="text-lg md:text-2xl font-bold text-black">
             DOMGAZOBETON
@@ -57,7 +57,7 @@ const Index = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 relative z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <Icon name={isMobileMenuOpen ? "X" : "Menu"} size={24} />
@@ -70,41 +70,80 @@ const Index = () => {
             <span className="text-gray-700 font-medium">8 800 550-28-34</span>
           </div>
         </div>
+      </header>
 
-        {/* Mobile menu */}
+      {/* Mobile menu overlay */}
+      {isMobileMenuOpen && (
         <div
-          className={`md:hidden mt-4 border-t border-gray-200 pt-4 ${isMobileMenuOpen ? "block" : "hidden"}`}
-        >
-          <div className="flex flex-col space-y-4">
-            <a href="#" className="text-gray-700 hover:text-black">
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile menu */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-40 md:hidden transform transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="p-6 pt-20">
+          <div className="flex flex-col space-y-6">
+            <a
+              href="#"
+              className="text-lg text-gray-700 hover:text-black transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Проекты
             </a>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <a
+              href="#"
+              className="text-lg text-gray-700 hover:text-black transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Услуги
             </a>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <a
+              href="#"
+              className="text-lg text-gray-700 hover:text-black transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Построено
             </a>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <a
+              href="#"
+              className="text-lg text-gray-700 hover:text-black transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Ипотека
             </a>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <a
+              href="#"
+              className="text-lg text-gray-700 hover:text-black transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Компания
             </a>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <a
+              href="#"
+              className="text-lg text-gray-700 hover:text-black transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Контакты
             </a>
-            <div className="pt-4 border-t border-gray-200">
-              <button className="w-full bg-gray-200 px-4 py-2 rounded text-gray-700 hover:bg-gray-300 mb-2">
+            <div className="pt-6 border-t border-gray-200">
+              <button
+                className="w-full bg-gray-200 px-4 py-3 rounded text-gray-700 hover:bg-gray-300 mb-4 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Заказать звонок
               </button>
-              <div className="text-center text-gray-700 font-medium">
+              <div className="text-center text-gray-700 font-medium text-lg">
                 8 800 550-28-34
               </div>
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Hero Section */}
       <section className="bg-white py-12 md:py-20 px-4 md:px-6">
