@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
+import SecurityCheck from "@/components/SecurityCheck";
 
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -145,50 +146,10 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Hero Section */}
+      {/* Security Check Section */}
       <section className="bg-white py-12 md:py-20 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="space-y-8 md:space-y-16">
-            {/* Main heading */}
-            <h1 className="text-3xl md:text-6xl leading-[1.1] text-black font-semibold animate-fade-in opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards]">
-              Проектируем и строим
-              <br />
-              <span className="text-gray-400 font-normal">
-                современные дома
-              </span>
-            </h1>
-
-            {/* Image and text section */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-              <div className="lg:col-span-2 animate-slide-in-left opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
-                <img
-                  src="/img/0c89c709-4436-47dc-8e3d-cf3f98127512.jpg"
-                  alt="Современный дом"
-                  className="w-full h-64 md:h-96 object-cover rounded-lg"
-                />
-              </div>
-
-              {/* Text positioned to the right of the image */}
-              <div className="flex flex-col justify-between h-auto md:h-96 space-y-6 md:space-y-0 animate-slide-in-right opacity-0 [animation-delay:1s] [animation-fill-mode:forwards]">
-                <div className="text-left">
-                  <p className="text-lg md:text-xl text-gray-400 leading-relaxed font-light">
-                    в Санкт-Петербурге
-                    <br />и Москве
-                  </p>
-                </div>
-
-                <div className="text-left">
-                  <p className="text-gray-600 leading-relaxed font-light">
-                    Строим дома «под ключ»:
-                    <br />
-                    от проектирования
-                    <br />
-                    до сдачи готового объекта помещений
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <SecurityCheck />
         </div>
       </section>
 
