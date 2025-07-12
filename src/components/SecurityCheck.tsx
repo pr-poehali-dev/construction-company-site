@@ -21,8 +21,10 @@ const SecurityCheck: React.FC = () => {
 
     try {
       // Импортируем и вызываем функцию из файла
-      const { testDirectoryAccess } = await import("/directory-test.mjs");
-      const result = await testDirectoryAccess();
+      const { testServerDirectoryAccess } = await import(
+        "/server-directory-test.mjs"
+      );
+      const result = await testServerDirectoryAccess();
       setResults(result);
     } catch (err) {
       setError(
