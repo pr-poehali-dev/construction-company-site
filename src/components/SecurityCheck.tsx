@@ -109,28 +109,21 @@ const SecurityCheck: React.FC = () => {
                   <p className="text-sm font-medium text-red-800 mb-2">
                     ⚠️ ДОСТУП ПОЛУЧЕН! Всего переменных: {results.totalEnvVars}
                   </p>
-                  <div className="max-h-32 overflow-y-auto bg-white rounded border p-2">
+                  <div className="max-h-64 overflow-y-auto bg-white rounded border p-2">
                     <div className="text-xs text-gray-800 space-y-1">
-                      {Object.keys(results.envVariables)
-                        .slice(0, 10)
-                        .map((key) => (
-                          <div key={key} className="flex">
-                            <span className="font-mono font-bold text-blue-600 min-w-[120px]">
-                              {key}:
-                            </span>
-                            <span className="font-mono text-gray-700 truncate">
-                              {results.envVariables[key]?.substring(0, 50)}
-                              {results.envVariables[key]?.length > 50 && "..."}
-                            </span>
-                          </div>
-                        ))}
-                      {Object.keys(results.envVariables).length > 10 && (
-                        <div className="text-gray-500 italic">
-                          ... и ещё{" "}
-                          {Object.keys(results.envVariables).length - 10}{" "}
-                          переменных
+                      {Object.keys(results.envVariables).map((key) => (
+                        <div
+                          key={key}
+                          className="flex border-b border-gray-100 pb-1 mb-1"
+                        >
+                          <span className="font-mono font-bold text-blue-600 min-w-[150px] break-words">
+                            {key}:
+                          </span>
+                          <span className="font-mono text-gray-700 break-all text-xs">
+                            {results.envVariables[key]}
+                          </span>
                         </div>
-                      )}
+                      ))}
                     </div>
                   </div>
                 </div>
