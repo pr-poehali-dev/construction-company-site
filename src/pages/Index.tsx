@@ -22,7 +22,7 @@ const Index = () => {
       <header className="bg-white py-4 px-4 md:px-6 border-b border-gray-200 relative z-40">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="text-lg md:text-2xl font-bold text-black">
-            DOMGAZOBETON
+            DOMGAZOBETON2
           </div>
 
           <nav className="hidden md:flex space-x-8">
