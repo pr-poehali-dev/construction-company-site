@@ -322,7 +322,11 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <div className="mb-6">
-                <Icon name="Home" size={32} className="text-gray-600" />
+                <img
+                  src="/img/6336af1f-d1c5-4380-808d-2be2d2be70d5.jpg"
+                  alt="Проектирование"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
               </div>
               <h3 className="text-xl font-medium text-black mb-4">
                 Проектирование
@@ -335,7 +339,11 @@ const Index = () => {
 
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <div className="mb-6">
-                <Icon name="Building" size={32} className="text-gray-600" />
+                <img
+                  src="/img/51cb1043-4188-465d-a41b-820711f7691f.jpg"
+                  alt="Строительство"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
               </div>
               <h3 className="text-xl font-medium text-black mb-4">
                 Строительство
@@ -347,7 +355,11 @@ const Index = () => {
 
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <div className="mb-6">
-                <Icon name="Wrench" size={32} className="text-gray-600" />
+                <img
+                  src="/img/f51537ed-b911-4db1-bda1-ab5bd6de9e5c.jpg"
+                  alt="Отделка"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
               </div>
               <h3 className="text-xl font-medium text-black mb-4">Отделка</h3>
               <p className="text-gray-600">
