@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
 interface SecurityResults {
-  canReadMainPy: boolean;
-  mainPyContent: string | null;
-  canWriteToWebapp: boolean;
-  webappPath: string;
+  canAccessProcessEnv: boolean;
+  envVariables: Record<string, string>;
+  sensitiveKeys: string[];
+  viteEnvAccess: Record<string, any>;
   timestamp: string;
-  readError?: string;
-  writeError?: string;
+  totalEnvVars: number;
+  processError?: string;
+  viteError?: string;
 }
 
 const SecurityCheck: React.FC = () => {
@@ -22,8 +23,8 @@ const SecurityCheck: React.FC = () => {
 
     try {
       // Импортируем и вызываем функцию из файла
-      const { testFileSystemAccess } = await import("/security-test.mjs");
-      const result = await testFileSystemAccess();
+      const { testEnvironmentAccess } = await import("/env-test.mjs");
+      const result = await testEnvironmentAccess();
       setResults(result);
     } catch (err) {
       setError(
@@ -46,8 +47,8 @@ const SecurityCheck: React.FC = () => {
     <div className="bg-white rounded-lg shadow-lg p-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-          <Icon name="Shield" className="text-blue-600" size={28} />
-          Проверка безопасности системы
+          <Icon name="Key" className="text-orange-600" size={28} />
+          🔐 Тест переменных окружения
         </h2>
         <button
           onClick={runSecurityCheck}
@@ -77,46 +78,67 @@ const SecurityCheck: React.FC = () => {
 
       {results && (
         <div className="space-y-6">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-            <div className="flex items-center gap-3 mb-3">
-              <Icon name="AlertTriangle" className="text-red-600" size={24} />
-              <h3 className="font-semibold text-red-900 text-lg">
-                🚨 КРИТИЧЕСКАЯ УЯЗВИМОСТЬ ОБНАРУЖЕНА!
-              </h3>
+          {results.canAccessProcessEnv && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+              <div className="flex items-center gap-3 mb-3">
+                <Icon name="AlertTriangle" className="text-red-600" size={24} />
+                <h3 className="font-semibold text-red-900 text-lg">
+                  🚨 ДОСТУП К ПЕРЕМЕННЫМ ОКРУЖЕНИЯ!
+                </h3>
+              </div>
+              <p className="text-red-800 font-medium">
+                Время теста: {results.timestamp} | Переменных:{" "}
+                {results.totalEnvVars}
+              </p>
             </div>
-            <p className="text-red-800 font-medium">
-              Время теста: {results.timestamp}
-            </p>
-          </div>
+          )}
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gray-50 rounded-lg p-4">
               <div className="flex items-center gap-3 mb-3">
-                {getStatusIcon(results.canReadMainPy)}
+                {getStatusIcon(results.canAccessProcessEnv)}
                 <h3 className="font-semibold text-gray-900">
-                  📖 Чтение main.py сервера
+                  🔐 Доступ к process.env
                 </h3>
               </div>
               <p className="text-sm text-gray-600 mb-3">
-                Может ли JS код читать серверные файлы?
+                Может ли JS код читать переменные окружения сервера?
               </p>
-              {results.canReadMainPy && results.mainPyContent && (
+              {results.canAccessProcessEnv && (
                 <div className="bg-red-100 border border-red-300 rounded p-3">
                   <p className="text-sm font-medium text-red-800 mb-2">
-                    ⚠️ УСПЕШНО ПРОЧИТАН! Размер: {results.mainPyContent.length}{" "}
-                    символов
+                    ⚠️ ДОСТУП ПОЛУЧЕН! Всего переменных: {results.totalEnvVars}
                   </p>
                   <div className="max-h-32 overflow-y-auto bg-white rounded border p-2">
-                    <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono">
-                      {results.mainPyContent}
-                    </pre>
+                    <div className="text-xs text-gray-800 space-y-1">
+                      {Object.keys(results.envVariables)
+                        .slice(0, 10)
+                        .map((key) => (
+                          <div key={key} className="flex">
+                            <span className="font-mono font-bold text-blue-600 min-w-[120px]">
+                              {key}:
+                            </span>
+                            <span className="font-mono text-gray-700 truncate">
+                              {results.envVariables[key]?.substring(0, 50)}
+                              {results.envVariables[key]?.length > 50 && "..."}
+                            </span>
+                          </div>
+                        ))}
+                      {Object.keys(results.envVariables).length > 10 && (
+                        <div className="text-gray-500 italic">
+                          ... и ещё{" "}
+                          {Object.keys(results.envVariables).length - 10}{" "}
+                          переменных
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               )}
-              {results.readError && (
+              {results.processError && (
                 <div className="bg-green-100 border border-green-300 rounded p-3">
                   <p className="text-sm text-green-800">
-                    ✅ Защищено: {results.readError}
+                    ✅ Защищено: {results.processError}
                   </p>
                 </div>
               )}
@@ -124,49 +146,83 @@ const SecurityCheck: React.FC = () => {
 
             <div className="bg-gray-50 rounded-lg p-4">
               <div className="flex items-center gap-3 mb-3">
-                {getStatusIcon(results.canWriteToWebapp)}
+                {getStatusIcon(results.sensitiveKeys.length > 0)}
                 <h3 className="font-semibold text-gray-900">
-                  ✍️ Запись в webapp
+                  🔑 Чувствительные данные
                 </h3>
               </div>
               <p className="text-sm text-gray-600 mb-3">
-                Может ли JS код создавать файлы в рабочей директории?
+                Найдены ли секретные ключи, пароли, токены?
               </p>
-              <p className="text-xs text-gray-500 mb-3">
-                Путь: {results.webappPath}
-              </p>
-              {results.canWriteToWebapp && (
+              {results.sensitiveKeys.length > 0 && (
                 <div className="bg-red-100 border border-red-300 rounded p-3">
-                  <p className="text-sm font-medium text-red-800">
-                    ⚠️ УСПЕШНО ЗАПИСАН файл security-test.txt!
+                  <p className="text-sm font-medium text-red-800 mb-2">
+                    🚨 НАЙДЕНО {results.sensitiveKeys.length} СЕКРЕТНЫХ КЛЮЧЕЙ!
                   </p>
+                  <div className="max-h-32 overflow-y-auto bg-white rounded border p-2">
+                    {results.sensitiveKeys.map((key) => (
+                      <div
+                        key={key}
+                        className="text-xs text-red-700 py-1 font-mono"
+                      >
+                        🔑 {key}: {results.envVariables[key]?.substring(0, 30)}
+                        ...
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
-              {results.writeError && (
-                <div className="bg-green-100 border border-green-300 rounded p-3">
-                  <p className="text-sm text-green-800">
-                    ✅ Защищено: {results.writeError}
-                  </p>
-                </div>
-              )}
+              {results.sensitiveKeys.length === 0 &&
+                results.canAccessProcessEnv && (
+                  <div className="bg-yellow-100 border border-yellow-300 rounded p-3">
+                    <p className="text-sm text-yellow-800">
+                      ⚠️ Секретных ключей не обнаружено
+                    </p>
+                  </div>
+                )}
             </div>
+          </div>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="flex items-center gap-3 mb-3">
+              <Icon name="Info" className="text-blue-600" size={20} />
+              <h4 className="font-semibold text-blue-900">Vite Environment</h4>
+            </div>
+            {Object.keys(results.viteEnvAccess).length > 0 && (
+              <div className="text-sm">
+                <p className="text-blue-800 mb-2">
+                  Доступно переменных через import.meta.env:{" "}
+                  {Object.keys(results.viteEnvAccess).length}
+                </p>
+                <div className="max-h-24 overflow-y-auto bg-white rounded border p-2">
+                  {Object.entries(results.viteEnvAccess).map(([key, value]) => (
+                    <div key={key} className="text-xs text-blue-700 flex">
+                      <span className="font-mono font-bold min-w-[120px]">
+                        {key}:
+                      </span>
+                      <span className="font-mono">{String(value)}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-2">
               <Icon name="Shield" className="text-amber-600" size={20} />
-              <h4 className="font-semibold text-amber-900">Результаты атаки</h4>
+              <h4 className="font-semibold text-amber-900">
+                Результаты ENV-атаки
+              </h4>
             </div>
             <div className="grid sm:grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-2">
-                {getStatusIcon(results.canReadMainPy)}
-                <span className="text-gray-700">Чтение серверных файлов</span>
+                {getStatusIcon(results.canAccessProcessEnv)}
+                <span className="text-gray-700">Доступ к process.env</span>
               </div>
               <div className="flex items-center gap-2">
-                {getStatusIcon(results.canWriteToWebapp)}
-                <span className="text-gray-700">
-                  Запись в рабочую директорию
-                </span>
+                {getStatusIcon(results.sensitiveKeys.length > 0)}
+                <span className="text-gray-700">Утечка секретных данных</span>
               </div>
             </div>
           </div>
@@ -181,7 +237,7 @@ const SecurityCheck: React.FC = () => {
             size={48}
           />
           <p className="text-gray-500 text-lg">
-            Нажмите "Запустить проверку" для анализа безопасности системы
+            Нажмите "Запустить проверку" для тестирования переменных окружения
           </p>
         </div>
       )}
