@@ -11,7 +11,7 @@ export async function testEnvironmentAccess() {
 
   try {
     // Попытка доступа к process.env
-    if (typeof process \!== "undefined" && process.env) {
+    if (typeof process !== "undefined" && process.env) {
       results.canAccessProcessEnv = true;
       results.envVariables = { ...process.env };
       results.totalEnvVars = Object.keys(process.env).length;
@@ -34,7 +34,7 @@ export async function testEnvironmentAccess() {
 
   try {
     // Проверка Vite env переменных
-    if (typeof import.meta \!== "undefined" && import.meta.env) {
+    if (typeof import.meta !== "undefined" && import.meta.env) {
       results.viteEnvAccess = { ...import.meta.env };
     }
   } catch (e) {
