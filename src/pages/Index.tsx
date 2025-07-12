@@ -415,7 +415,7 @@ const Index = () => {
 
             <div>
               <img
-                src="/img/047025a7-1cfe-4149-8c85-5a0be9b9030d.jpg"
+                src="/img/b136a11d-de2a-4be3-bedb-05bafc14d1a8.jpg"
                 alt="Строительство дома"
                 className="w-full h-96 object-cover rounded-lg"
               />
